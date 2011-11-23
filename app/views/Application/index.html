@@ -1,0 +1,57 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{if parent != null}
+	<p><a href="/?folderId=${parent.id}">Go up one level</a></p>
+#{/if}
+
+<p>
+	<span class="breadcrumb">
+		Toplevel » #{list breadcrumb, as:'path'}<a>${path}</a>${path_isLast ? '' : ' » '}#{/list}
+	</span>
+</p>
+
+#{if folders.size() > 0}
+<ul class="folders">
+	#{list folders, as:'folder'}
+    <li class="folder"><a href="/?folderId=${folder.id}">${folder.name}</a></li>
+	#{/list}
+</ul>
+#{/if}
+
+#{if documents.size() > 0}
+<div class="documents-container">
+	<table class="documents">
+		<tr class="document-header">
+			<th class="column"></th>
+			<th class="column">Name</th>
+			<th class="column">Modify date</th>
+			<th class="column">Size</th>
+			<th class="column">Mimetype</th>
+		</tr>
+		#{list documents, as:'document'}
+	   	<tr class="document">
+	   		<td class="column">
+	   			<img src="/public/images/document.png" />
+	  		</td>
+	   		<td class="column">
+		   		<a href="/download?documentId=${document.id}">${document.name}</a>
+	  		</td>
+	  		<td class="column">
+	  			${document.lastModificationDate.format('yyyy-MM-dd hh:mm:ss')}
+	  		</td>
+	  		<td class="column">
+	  			${document.contentStreamLength.formatSize()}
+	  		</td>
+	  		<td class="column">
+	  			${document.contentStreamMimeType}
+	  		</td>
+	   	</tr>
+		#{/list}
+	</table>
+</div>
+#{/if}
+#{else}
+    <p><i>No files to show</i></p>
+#{/else}
+

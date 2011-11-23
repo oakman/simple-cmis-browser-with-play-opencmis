@@ -1,0 +1,56 @@
+body {
+	background-color: #333;
+}
+
+div.content {
+	background-color: #eee;
+	padding: 20px;
+	border-radius: 15px;
+	margin-top: 20px;
+}
+
+li.folder {
+	background: url("/public/images/folder.png") no-repeat;
+	list-style-type: none;
+	margin: 0;
+}
+
+li.folder a {
+	padding-left: 25px;
+}
+
+tr.document-header {
+	background-color: #ddd;
+	margin: 0;
+}
+
+tr.document {
+	margin: 0;
+}
+
+td.column,th.column {
+	padding: 5px;
+}
+
+ul.folders,table.documents {
+	padding: 0;
+}
+
+table.documents {
+	margin: 0;
+}
+
+div.documents-container {
+	border: solid 1px silver;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+span.breadcrumb {
+	white-space: nowrap;
+}
+
+h1.heading {
+	margin: 0;
+	padding: 0;
+}
