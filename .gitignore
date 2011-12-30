@@ -3,3 +3,12 @@ eclipse/
 lib/
 tmp/
 .project
+
+bin/
+data/
+db/
+dist/
+logs/
+test-result/
+tmp/
+modules/
