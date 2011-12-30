@@ -1,5 +1,5 @@
 # Application dependencies
 
 require:
-    - play
+    - play 1.2.4
     - org.apache.chemistry.opencmis -> chemistry-opencmis-client-impl 0.5.0
